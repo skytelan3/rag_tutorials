@@ -6,13 +6,20 @@
     3. GPU: RTX 3060 12GB
 ## Requirements
     1. Ubuntu 22.04
-    2. Docker & docker-compose
+    2. Docker & docker-compose (or podman, podman-compose)
     3. Miniconda3
 ## Tutorials
+### Create pgvector image
+```bash
+git clone --branch v0.7.1 https://github.com/pgvector/pgvector.git
+cd pgvector
+docker build --pull --build-arg PG_MAJOR=16 -t watchtek/pgvector .
+cd ..
+```
 ### Start Vector database
 ```bash
 git clone https://github.com/skytelan3/rag_tutorials
-cd docker-compose
+cd rag_tutorials/docker-compose
 docker-compose up -d
 cd ..
 ```
@@ -20,4 +27,8 @@ cd ..
 ```bash
 conda env create --file environment.yml
 ```
-
+### Start jupyterlab
+```bash
+conda activate rag_tutorials
+./jupyterlab.sh
+```

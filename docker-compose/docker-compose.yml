@@ -1,7 +1,7 @@
 version: "3"
 services:
   db.feature.ai:
-    image: postgres:latest
+    image: watchtek/pgvector:latest
     container_name: db.feature.ai
     environment:
       - POSTGRES_USER=${USER}
