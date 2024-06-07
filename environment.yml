@@ -1,0 +1,16 @@
+name: rag_tutorials
+
+channels:
+  - conda-forge
+  - defaults
+  - anaconda
+dependencies:
+  - jupyterlab
+  - pip
+  - python=3.10
+  - pip:
+    - llama-index-readers-file
+    - pymupdf
+    - llama-index-vector-stores-postgres
+    - llama-index-embeddings-huggingface
+    - llama-index-llms-groq
